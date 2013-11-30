@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.fixent.rm.server.model.Scheduler" table="SCHEDULER">
+		<id name="id" type="int">
+			<column name="ID" precision="5" scale="0" />
+			<generator class="increment" />
+		</id>
+		
+		<property name="bookingDate" type="date">
+			<column name="BOOKING_DATE" length="20" not-null="true" />
+		</property>
+		
+		<property name="expirydate" type="date">
+			<column name="EXPIRY_DATE" length="20" not-null="true" />
+		</property>
+		
+		<property name="fromDate" type="date">
+			<column name="FROM_DATE" length="20" not-null="true" />
+		</property>
+		
+		<property name="toDate" type="date">
+			<column name="TO_DATE" length="20" not-null="true" />
+		</property>
+		
+		<property name="dueDate" type="date">
+			<column name="DUE_DATE" length="20" not-null="true" />
+		</property>
+		
+		<property name="days" type="int">
+			<column name="DAYS" length="20" not-null="true" />
+		</property>
+		
+		<property name="dueAmount" type="double">
+			<column name="DUE_AMOUNT" length="20" not-null="true" />
+		</property>
+		
+		<property name="serviceTax" type="double">
+			<column name="SERVICE_TAX" length="20" not-null="true" />
+		</property>
+		
+		<property name="taxAmount" type="double">
+			<column name="TAX_AMOUNT" length="20" not-null="true" />
+		</property>
+		
+		<property name="totalDue" type="double">
+			<column name="TOTAL_DUE" length="20" not-null="true" />
+		</property>
+		
+		<property name="paymentAmount" type="double">
+			<column name="PAYMENT_AMOUNT" length="20" not-null="true" />
+		</property>
+		
+		<property name="paymentDate" type="date">
+			<column name="PAYMENT_DATE" length="20" not-null="true" />
+		</property>
+		
+		<many-to-one name="tenant" class="com.fixent.rm.server.model.Tenant" fetch="select">
+            <column name="TENANT_ID" />
+        </many-to-one>
+		
+	</class>
+</hibernate-mapping>

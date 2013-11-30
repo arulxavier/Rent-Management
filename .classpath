@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="res"/>
+	<classpathentry kind="lib" path="D:/dev/lib/hbernate/hibernate-commons-annotations-3.2.0.Final.jar"/>
+	<classpathentry kind="lib" path="D:/dev/lib/hbernate/hibernate-core-3.6.3.Final.jar"/>
+	<classpathentry kind="lib" path="D:/dev/lib/hbernate/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="D:/dev/lib/hbernate/mysql-connector-java-5.1.9.jar"/>
+	<classpathentry kind="lib" path="D:/dev/lib/hbernate/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/dev/lib/hbernate/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/dev/lib/hbernate/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="D:/dev/lib/hbernate/javassist-3.12.1.GA.jar"/>
+	<classpathentry kind="lib" path="D:/dev/lib/hbernate/jta-1.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

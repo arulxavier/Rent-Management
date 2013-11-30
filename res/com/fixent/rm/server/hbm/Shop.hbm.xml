@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.fixent.rm.server.model.Shop" table="SHOP">
+		<id name="id" type="int">
+			<column name="ID" precision="5" scale="0" />
+			<generator class="assigned" />
+		</id>
+
+		<property name="shopName" type="string">
+			<column name="SHOP_NUMBER" length="20" not-null="true" />
+		</property>
+		<property name="sqrt" type="double">
+			<column name="SQARE_FEET" length="20" not-null="true" />
+		</property>
+		
+		<many-to-one name="group" class="com.fixent.rm.server.model.Group" column="GROUP_ID" not-null="true" />
+
+	</class>
+</hibernate-mapping>
