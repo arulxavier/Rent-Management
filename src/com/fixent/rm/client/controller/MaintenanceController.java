@@ -3,6 +3,7 @@ package com.fixent.rm.client.controller;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
@@ -14,7 +15,10 @@ import com.fixent.rm.client.view.MaintenanceView;
 import com.fixent.rm.client.view.ShopView;
 import com.fixent.rm.server.model.Group;
 import com.fixent.rm.server.model.Shop;
-import com.fixent.rm.server.service.impl.MaintenanceServiceImpl;
+import com.fixent.rm.server.model.info.GroupInfo;
+import com.fixent.rm.server.model.info.ShopInfo;
+import com.fixent.rm.server.service.impl.GroupServiceImpl;
+import com.fixent.rm.server.service.impl.ShopServiceImpl;
 
 public class MaintenanceController 
 extends BaseController {
@@ -48,18 +52,20 @@ extends BaseController {
 
 	private void setGroupModel() {
 		
-		MaintenanceServiceImpl impl = new MaintenanceServiceImpl();
-		groups = impl.getGroups();		
-		GroupListDataTable dataModel = new GroupListDataTable(groups);
+		GroupInfo groupInfo = new GroupInfo();
+		GroupServiceImpl impl = new GroupServiceImpl();
+		groups = impl.getGroups(groupInfo);		
+		GroupDataTable dataModel = new GroupDataTable(groups);
 		view.getGroupTable().setModel(dataModel);
 		
 	}
 
 	private void setShopModel() {
 		
-		MaintenanceServiceImpl impl = new MaintenanceServiceImpl();
-		shops = impl.getShops();		
-		ShopListDataTable dataModel = new ShopListDataTable(shops);
+		ShopInfo shopInfo = new ShopInfo();
+		ShopServiceImpl impl = new ShopServiceImpl();
+		shops = impl.getShops(shopInfo);		
+		ShopDataTable dataModel = new ShopDataTable(shops);
 		view.getShopTable().setModel(dataModel);
 		
 	}
@@ -79,7 +85,7 @@ extends BaseController {
 	class GroupAddAction
 	implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
 			
 			GroupView groupView = new GroupView();
@@ -99,12 +105,12 @@ extends BaseController {
 	class GroupDeleteAction
 	implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
 			
 			final int row = view.getGroupTable().getSelectedRow();
 			Group group = groups.get(row);
-			MaintenanceServiceImpl  impl = new MaintenanceServiceImpl();
+			GroupServiceImpl  impl = new GroupServiceImpl();
 			impl.deleteGroup(group);
 			setGroupModel();
 		}
@@ -120,16 +126,16 @@ extends BaseController {
 			this.groupView = groupView; 
 		}
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
 			
 			String groupName = groupView.getGroupNameTextField().getText();
 			
 			if (groupName != null && groupName.length() > 0) {
 				
-				MaintenanceServiceImpl impl = new MaintenanceServiceImpl();
+				GroupServiceImpl impl = new GroupServiceImpl();
 				Group group = new Group();
-				group.setGroupName(groupName);
+				group.setName(groupName);
 				impl.createGroup(group);
 				setGroupModel();
 				groupPopup.dispose();
@@ -146,7 +152,7 @@ extends BaseController {
 	class GroupCancelAction
 	implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
 			groupPopup.dispose();
 		}
@@ -156,7 +162,7 @@ extends BaseController {
 	class ShopAddAction
 	implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
 			
 			ShopView shopView = new ShopView();
@@ -165,7 +171,7 @@ extends BaseController {
 			shopView.getCancelButton().addActionListener(new ShopCancelAction());
 			shopPopup = new JDialog();
 			shopPopup.add(shopView);
-			shopPopup.setSize(480, 250);
+			shopPopup.setSize(480, 360);
 			shopPopup.setResizable(false);
 			shopPopup.setLocationRelativeTo(null);
 			shopPopup.setVisible(true);			
@@ -177,7 +183,7 @@ extends BaseController {
 			boxModel.addElement("Select One");
 			
 			for (Group group : groups) {
-				boxModel.addElement(group.getGroupName());
+				boxModel.addElement(group.getName());
 			}
 			shopView.getGroupNameComboBox().setModel(boxModel);
 			
@@ -190,12 +196,12 @@ extends BaseController {
 	class ShopDeleteAction
 	implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
 			
 			final int row = view.getShopTable().getSelectedRow();
 			Shop shop = shops.get(row);
-			MaintenanceServiceImpl  impl = new MaintenanceServiceImpl();
+			ShopServiceImpl  impl = new ShopServiceImpl();
 			impl.deleteShop(shop);
 			setShopModel();
 		}
@@ -211,19 +217,19 @@ extends BaseController {
 			this.shopView = shopView; 
 		}
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
 			
-			String shopName = shopView.getShopNumberTextField().getText();
-			Double sqrt = Double.valueOf(shopView.getSqrtTextField().getText());
+			String number = shopView.getShopNumberTextField().getText();
+			BigDecimal sqrt = new BigDecimal(shopView.getSqrtTextField().getText());
 			String groupName = shopView.getGroupNameComboBox().getSelectedItem().toString();
 			
-			if (shopName != null && shopName.length() > 0) {
+			if (number != null && number.length() > 0) {
 				
-				MaintenanceServiceImpl impl = new MaintenanceServiceImpl();
+				ShopServiceImpl impl = new ShopServiceImpl();
 				Shop shop = new Shop();
-				shop.setShopName(shopName);
-				shop.setSqrt(sqrt);
+				shop.setNumber(number);
+				shop.setSquareFeet(sqrt);
 				shop.setGroup(getGroup(groupName));
 				impl.createShop(shop);
 				setShopModel();
@@ -241,7 +247,7 @@ extends BaseController {
 	class ShopCancelAction
 	implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
 			shopPopup.dispose();
 		}
@@ -252,7 +258,7 @@ extends BaseController {
 		
 		for (Group group : groups) {
 			
-			if(name.equals(group.getGroupName())) {
+			if(name.equals(group.getName())) {
 				return group;
 			}
 		}

@@ -31,10 +31,12 @@ public class GroupView extends javax.swing.JPanel {
         saveButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel1.setText("Group Name");
 
-        groupNameTextField.setColumns(20);
+        groupNameTextField.setColumns(15);
 
         saveButton.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         saveButton.setText("Save");
@@ -56,7 +58,7 @@ public class GroupView extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cancelButton))
                     .addComponent(groupNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

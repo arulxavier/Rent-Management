@@ -2,18 +2,15 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.fixent.rm.server.model.Group" table="GROUP_ST">
+	<class name="com.fixent.rm.server.model.Group" table="SHOP_GROUP">
 		<id name="id" type="int">
 			<column name="ID" precision="5" scale="0" />
 			<generator class="assigned" />
 		</id>
 
-		<property name="groupName" type="string">
+		<property name="name" type="string">
 			<column name="GROUP_NAME" length="20" not-null="true" />
 		</property>
-		<!-- <property name="status" type="boolean">
-			<column name="STATUS" length="20" not-null="true" />
-		</property> -->
 
 	</class>
 </hibernate-mapping>

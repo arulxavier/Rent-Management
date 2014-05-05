@@ -4,46 +4,49 @@ import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
-import com.fixent.rm.server.model.Tenant;
+import com.fixent.rm.server.model.Group;
+import com.fixent.rm.server.model.Shop;
 
-public class TenantListDataTable extends AbstractTableModel {
+public class ShopDataTable extends AbstractTableModel {
 
-	public TenantListDataTable(List<Tenant> tenants) {
+	public ShopDataTable(List<Shop> shops) {
 		super();
-		this.tenants = tenants;
+		this.shops = shops;
 	}
 
 	/**/
 	private static final long serialVersionUID = 1L;
 	
-	List<Tenant> tenants;
-	String columnList[] = new String[] { "ID", "Shop Name" };
+	List<Shop> shops;
+	String columnList[] = new String[] { "ID", "Shop Name", "Group Name" };
 
-	@Override
+	
 	public int getColumnCount() {
 		return columnList.length;
 	}
 
-	@Override
+	
 	public int getRowCount() {
-		return tenants != null ? tenants.size() : 0;
+		return shops != null ? shops.size() : 0;
 	}
 
-	@Override
+	
 	public Object getValueAt(int rowIndex, int columnIndex) {
 
-		Tenant entity = tenants.get(rowIndex);
+		Shop entity = shops.get(rowIndex);
 		switch (columnIndex) {
 		case 0:
 			return entity.getId();
 		case 1:
-			return entity.getShopName();
+			return entity.getNumber();
+		case 2:
+			return entity.getGroup().getName();
 		default:
 			return null;
 		}
 	}
 
-	@Override
+	
 	public String getColumnName(int col) {
 		return columnList[col];
 	}

@@ -7,11 +7,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import com.fixent.rm.server.model.Scheduler;
+import com.fixent.rm.server.model.PaymentSchedule;
 
 public class SchedulerUtil {
 	
-	public static List<Scheduler> getSchedule(Date startDate, int year, Double dueAmount) {
+	public static List<PaymentSchedule> getSchedule(Date startDate, int year, Double dueAmount) {
 		
 		Double totalDue = new Double(0);
 		
@@ -32,12 +32,12 @@ public class SchedulerUtil {
 		
 		Calendar monthEndDate = Calendar.getInstance();
 		
-		List<Scheduler> paymentSchedules  = new ArrayList<Scheduler>();
+		List<PaymentSchedule> paymentSchedules  = new ArrayList<PaymentSchedule>();
 		int i = 1;
 		
 		do {
 			
-			Scheduler paymentSchedule = new Scheduler();
+			PaymentSchedule paymentSchedule = new PaymentSchedule();
 //			paymentSchedule.setId(i);
 			i++;
 			paymentSchedule.setFromDate(monthStartDate.getTime());
@@ -68,7 +68,7 @@ public class SchedulerUtil {
 			monthStartDate.add(Calendar.MONTH, 1);
 		} while (0 <= yearEndDate.compareTo(monthEndDate));
 		
-		for (Scheduler paymentSchedule : paymentSchedules) {
+		for (PaymentSchedule paymentSchedule : paymentSchedules) {
 			
 			System.out.println("ID :" + paymentSchedule.getId() + " From Date :" + format.format(paymentSchedule.getFromDate()) 
 					+ "  " + "To Date :" + format.format(paymentSchedule.getToDate()));

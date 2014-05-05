@@ -4,14 +4,33 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="res"/>
-	<classpathentry kind="lib" path="D:/dev/lib/hbernate/hibernate-commons-annotations-3.2.0.Final.jar"/>
-	<classpathentry kind="lib" path="D:/dev/lib/hbernate/hibernate-core-3.6.3.Final.jar"/>
-	<classpathentry kind="lib" path="D:/dev/lib/hbernate/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="D:/dev/lib/hbernate/mysql-connector-java-5.1.9.jar"/>
-	<classpathentry kind="lib" path="D:/dev/lib/hbernate/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="D:/dev/lib/hbernate/slf4j-api-1.6.1.jar"/>
-	<classpathentry kind="lib" path="D:/dev/lib/hbernate/commons-collections-3.1.jar"/>
-	<classpathentry kind="lib" path="D:/dev/lib/hbernate/javassist-3.12.1.GA.jar"/>
-	<classpathentry kind="lib" path="D:/dev/lib/hbernate/jta-1.1.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/antlr-2.7.6.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/commons-cli-1.0.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/commons-collections-3.1.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/commons-lang-2.1.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/commons-lang3-3.1.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/dom4j-1.6.1.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/hibernate-commons-annotations-3.2.0.Final.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/hibernate-core-3.6.3.Final.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/javassist-3.12.1.GA.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/jta-1.1.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/junit-3.8.1.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/junit-4.8.2.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/mysql-connector-java-5.1.25-bin.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/mysql-connector-java-5.1.9.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/mysql-connector-java-5.1.9.zip"/>
+	<classpathentry kind="var" path="3rdparty-jar/plexus-archiver-2.1.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/plexus-build-api-0.0.4.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/plexus-compiler-api-1.9.1.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/plexus-compiler-javac-1.9.1.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/plexus-compiler-manager-1.9.1.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/plexus-digest-1.0.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/plexus-interactivity-api-1.0-alpha-4.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/plexus-interpolation-1.13.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/plexus-interpolation-1.15.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/plexus-io-2.0.2.jar"/>
+	<classpathentry kind="var" path="3rdparty-jar/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/cbeyond/dev/ws/jar/Component.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

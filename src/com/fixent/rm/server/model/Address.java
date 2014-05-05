@@ -3,13 +3,12 @@ package com.fixent.rm.server.model;
 public class Address {
 	
 	int id;
-	String street;
+	String street1;
+	String street2;
 	String city;
 	String state;
 	String country;
-	String pincode;
-	
-	Tenant tenant;
+	int pincode;
 	
 	public int getId() {
 		return id;
@@ -17,11 +16,17 @@ public class Address {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getStreet() {
-		return street;
+	public String getStreet1() {
+		return street1;
 	}
-	public void setStreet(String street) {
-		this.street = street;
+	public void setStreet1(String street1) {
+		this.street1 = street1;
+	}
+	public String getStreet2() {
+		return street2;
+	}
+	public void setStreet2(String street2) {
+		this.street2 = street2;
 	}
 	public String getCity() {
 		return city;
@@ -41,18 +46,10 @@ public class Address {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	public String getPincode() {
+	public int getPincode() {
 		return pincode;
 	}
-	public void setPincode(String pincode) {
+	public void setPincode(int pincode) {
 		this.pincode = pincode;
 	}
-	public Tenant getTenant() {
-		return tenant;
-	}
-	public void setTenant(Tenant tenant) {
-		this.tenant = tenant;
-	}
-
-	
 }

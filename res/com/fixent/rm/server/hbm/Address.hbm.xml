@@ -2,14 +2,17 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.fixent.rm.server.model.Address" table="ADDRESS_RENT">
+	<class name="com.fixent.rm.server.model.Address" table="ADDRESS">
 		<id name="id" type="int">
 			<column name="ID" precision="5" scale="0" />
 			<generator class="increment" />
 		</id>
 
-		<property name="street" type="string">
-			<column name="STREET" not-null="true" />
+		<property name="street1" type="string">
+			<column name="STREET_1" not-null="true" />
+		</property>
+		<property name="street2" type="string">
+			<column name="STREET_2" not-null="true" />
 		</property>
 		<property name="city" type="string">
 			<column name="CITY" not-null="true" />
@@ -23,10 +26,6 @@
 		<property name="pincode" type="string">
 			<column name="PINCODE" not-null="true" />
 		</property>
-		
-		<many-to-one name="tenant" class="com.fixent.rm.server.model.Tenant" fetch="select">
-            <column name="TENANT_ID" />
-        </many-to-one>
 		
 	</class>
 </hibernate-mapping>

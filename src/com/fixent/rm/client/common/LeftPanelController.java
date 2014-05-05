@@ -10,8 +10,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JViewport;
 
 import com.fixent.rm.client.controller.MaintenanceController;
-import com.fixent.rm.client.controller.TenantController;
-import com.fixent.rm.client.controller.TenantListController;
+import com.fixent.rm.client.controller.RentDashboardController;
 
 public class LeftPanelController {
 
@@ -27,7 +26,7 @@ public class LeftPanelController {
 
 	class BookAction implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
 			navigateAction(e);
 		}
@@ -36,7 +35,7 @@ public class LeftPanelController {
 
 	class SubscriberAction implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
 			navigateAction(e);
 		}
@@ -69,10 +68,10 @@ public class LeftPanelController {
 									.add(new MaintenanceController().view,
 											BorderLayout.CENTER);
 						} else if (((JButton)e.getSource()).getText().equalsIgnoreCase(
-								"Tenant")) {
+								"Rent")) {
 
 							rightSidePanel
-									.add(new TenantListController().view,
+									.add(new RentDashboardController().view,
 											BorderLayout.CENTER);
 						}
 						rightSidePanel.repaint();

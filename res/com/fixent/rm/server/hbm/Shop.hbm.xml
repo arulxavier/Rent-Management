@@ -8,10 +8,10 @@
 			<generator class="assigned" />
 		</id>
 
-		<property name="shopName" type="string">
+		<property name="number" type="string">
 			<column name="SHOP_NUMBER" length="20" not-null="true" />
 		</property>
-		<property name="sqrt" type="double">
+		<property name="squareFeet" type="java.math.BigDecimal">
 			<column name="SQARE_FEET" length="20" not-null="true" />
 		</property>
 		

@@ -43,7 +43,7 @@ public class LeftPanel extends javax.swing.JPanel {
         TenantButton.setBackground(new java.awt.Color(61, 86, 109));
         TenantButton.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         TenantButton.setForeground(new java.awt.Color(255, 255, 255));
-        TenantButton.setText("Tenant");
+        TenantButton.setText("Rent");
         TenantButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         TenantButton.setFocusPainted(false);
         TenantButton.addActionListener(new java.awt.event.ActionListener() {

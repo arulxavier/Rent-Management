@@ -1,10 +1,12 @@
 package com.fixent.rm.server.model;
 
+import java.math.BigDecimal;
+
 public class Shop {
 	
 	int id;
-	String shopName;
-	Double sqrt;
+	String number;
+	BigDecimal squareFeet;
 	Group group;
 	
 	public int getId() {
@@ -13,23 +15,23 @@ public class Shop {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getShopName() {
-		return shopName;
+	public BigDecimal getSquareFeet() {
+		return squareFeet;
 	}
-	public void setShopName(String shopName) {
-		this.shopName = shopName;
-	}
-	public Double getSqrt() {
-		return sqrt;
-	}
-	public void setSqrt(Double sqrt) {
-		this.sqrt = sqrt;
+	public void setSquareFeet(BigDecimal squareFeet) {
+		this.squareFeet = squareFeet;
 	}
 	public Group getGroup() {
 		return group;
 	}
 	public void setGroup(Group group) {
 		this.group = group;
+	}
+	public String getNumber() {
+		return number;
+	}
+	public void setNumber(String number) {
+		this.number = number;
 	}
 	
 }

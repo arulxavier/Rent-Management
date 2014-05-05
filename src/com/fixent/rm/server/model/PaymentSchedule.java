@@ -2,7 +2,7 @@ package com.fixent.rm.server.model;
 
 import java.util.Date;
 
-public class Scheduler {
+public class PaymentSchedule {
 	
 	int id;
 	Date bookingDate;
@@ -17,7 +17,8 @@ public class Scheduler {
 	Double totalDue;
 	Double paymentAmount;
 	Date paymentDate;
-	Tenant tenant;
+	Rent rent;
+	
 	public int getId() {
 		return id;
 	}
@@ -96,11 +97,10 @@ public class Scheduler {
 	public void setPaymentDate(Date paymentDate) {
 		this.paymentDate = paymentDate;
 	}
-	public Tenant getTenant() {
-		return tenant;
+	public Rent getRent() {
+		return rent;
 	}
-	public void setTenant(Tenant tenant) {
-		this.tenant = tenant;
+	public void setRent(Rent rent) {
+		this.rent = rent;
 	}
-
 }
